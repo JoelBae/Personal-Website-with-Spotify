@@ -8,25 +8,22 @@ AOS.init({ duration: 1000 });
 function App() {
   const [token, setToken] = useState("");
 
+  //get access token from backend
   async function getToken() {
     const response = await fetch("/token");
     const json = await response.json();
     setToken(json.accessToken);
   }
+  getToken();
+
+  //get new access token from backend every hour
   const interval = setInterval(() => getToken(), 1000 * 60 * 60);
-  useEffect(() => {
-    getToken();
-  }, []);
 
-  useEffect(() => {
-    if (token) {
-      const interval = 1000 * 15;
-    }
-  });
-
+  //don't render anything if no token exists
   if (token === "") {
     return;
   }
+
   return (
     <div className="container">
       <Intro />
@@ -56,6 +53,7 @@ function Intro() {
 
 function About(props) {
   const [count, setCount] = useState(0);
+  //Used to rerender Playlist
   const increment = () => {
     setCount(count + 1);
   };

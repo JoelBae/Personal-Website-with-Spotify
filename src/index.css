@@ -22,10 +22,21 @@ button {
   font-family: "Lucida Sans Unicode";
   cursor: pointer;
 }
-.searches {
-  justify-content: space-between;
+
+svg {
+  fill: currentColor;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: 0px solid;
+  border-radius: 10px;
+}
 .container {
   color: aliceblue;
   margin-left: 10%;
@@ -76,20 +87,6 @@ button {
   gap: 3%;
 }
 
-input {
-  border: 0px solid;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(214, 221, 227, 0.281);
-  border-radius: 10px;
-}
-
 .playlist {
   display: flex;
   flex-direction: column;
@@ -126,11 +123,16 @@ input {
 .socials {
   color: rgb(240, 248, 255);
 }
-svg {
-  fill: currentColor;
+
+.searches {
+  justify-content: space-between;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(214, 221, 227, 0.281);
+  border-radius: 10px;
 }

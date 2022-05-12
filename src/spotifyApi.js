@@ -4,8 +4,11 @@ import "aos/dist/aos.css";
 import axios from "axios";
 AOS.init({ duration: 200 });
 
+// Renders the Playlist
 export function Playlist(props) {
   const [tracks, setTracks] = useState([]);
+
+  //Recieves playlist content
   useEffect(() => {
     async function fetchPlaylist() {
       const playlist_id = "3lTTllTnRJdf4PDUz54zE4";
@@ -26,7 +29,7 @@ export function Playlist(props) {
       }
     }
     fetchPlaylist();
-  }, [props.count]);
+  }, [props.count]); //retriggers when count is updated
   return (
     <div className="playlistContainer">
       <a
@@ -43,6 +46,7 @@ export function Playlist(props) {
   );
 }
 
+//adds track to the playlist
 async function addTrack(uri, accessToken, increment, handleSubmit) {
   const data = {
     position: 0,
@@ -57,15 +61,15 @@ async function addTrack(uri, accessToken, increment, handleSubmit) {
         "Content-Type": "application/json",
       },
     });
-
-    increment();
-    handleSubmit();
+    increment(); //changes the state of count to update Playlist
+    handleSubmit(); //changes the state of the search bar; empties it
   } catch (error) {
     console.log(error);
   }
 }
 
 function Track(props) {
+  //Includes submit button in component
   if (props.searches === "True") {
     return (
       <div className="track searches">
@@ -89,6 +93,7 @@ function Track(props) {
       </div>
     );
   }
+  // does not include submit button
   return (
     <div className="track">
       <a href={props.track_href} className="track" target="_blank">
@@ -98,6 +103,8 @@ function Track(props) {
     </div>
   );
 }
+
+//For each item in array of tracks, renders track
 function Songs(props) {
   return (
     <div className="songs">
@@ -121,8 +128,11 @@ function Songs(props) {
   );
 }
 
+//Search results from song search bar
 function Results(props) {
   const [searchResults, setSearchResults] = useState([]);
+
+  //gets array of 5 tracks
   useEffect(() => {
     async function findSong(song) {
       if (song === "") {
@@ -144,6 +154,8 @@ function Results(props) {
 
     findSong(props.submit);
   }, [props.submit]);
+
+  //hides search result box if no input
   if (props.submit === "") {
     return <div className="playlist blank"></div>;
   }
@@ -159,8 +171,12 @@ function Results(props) {
     </div>
   );
 }
+
+//Search form
 export function SongInput(props) {
   const [song, setSong] = useState("");
+
+  //empties form when called
   const handleSubmit = () => {
     setSong("");
   };

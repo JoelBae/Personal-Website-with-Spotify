@@ -2,16 +2,18 @@ const express = require("express");
 const axios = require("axios");
 const qs = require("qs");
 require("dotenv").config();
+path = require("path");
 
 const app = express();
 const port = process.env.PORT || 8080;
-app.use(express.static(path.join(_dirname, "../build")));
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build", "index.html"));
-});
-
+app.use(express.static(path.join(__dirname, "../build")));
 app.listen(port);
-
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../build", "index.html"));
+});
 //hidden constants
 const client_id = process.env.SPOTIFY_API_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;

@@ -1,13 +1,136 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("bg4.jpg");
+  background-size: cover;
+  overflow: overlay;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: aliceblue;
+}
+
+button {
+  background-color: rgb(67, 67, 67);
+  color: aliceblue;
+  height: 25px;
+  width: fit-content;
+  border-radius: 15%;
+  border: 0px;
+  font-family: "Lucida Sans Unicode";
+  cursor: pointer;
+}
+.searches {
+  justify-content: space-between;
+}
+
+.container {
+  color: aliceblue;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.name {
+  font-size: 200px;
+  color: rgb(167, 234, 234);
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  height: 85vh;
+  align-items: center;
+  justify-content: center;
+  gap: 3%;
+}
+
+input {
+  border: 0px solid;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(214, 221, 227, 0.281);
+  border-radius: 10px;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  min-width: 40vh;
+  margin-right: 5%;
+  height: 30vh;
+  border-radius: 7px;
+  overflow-y: auto;
+  background-color: rgb(38, 38, 38);
+}
+.linkToPlaylist {
+  color: rgb(201, 207, 237);
+  text-decoration: none;
+  font-size: 20px;
+}
+.playlistContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+}
+.blank {
+  opacity: 0;
+}
+.track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 5px;
+}
+.art {
+  padding-right: 5px;
+}
+.socials {
+  color: rgb(240, 248, 255);
+}
+svg {
+  fill: currentColor;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

@@ -12,9 +12,6 @@ app.listen(port, () => {
   console.log("Server started on: " + port);
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build", "index.html"));
-});
 //hidden constants
 const client_id = process.env.SPOTIFY_API_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -63,3 +60,7 @@ getToken();
 
 //every 55 minutes, generate new access token
 setInterval(getToken, 1000 * 60 * 55);
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
+});

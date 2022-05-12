@@ -6,7 +6,10 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 8080;
 app.listen(port);
-
+app.use(express.static(path.join(_dirname, "../build")));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
+});
 //hidden constants
 const client_id = process.env.SPOTIFY_API_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;

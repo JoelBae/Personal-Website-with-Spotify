@@ -69,6 +69,7 @@ input {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin-left: 2%;
 }
 
 .projects {
@@ -93,7 +94,6 @@ input {
   flex-direction: column;
   width: fit-content;
   overflow-x: auto;
-  margin-right: 5%;
   height: 30vh;
   border-radius: 7px;
   overflow-y: auto;
@@ -107,7 +107,6 @@ input {
 .playlistContainer {
   display: flex;
   flex-direction: column;
-  margin-right: 5%;
 }
 .blank {
   opacity: 0;

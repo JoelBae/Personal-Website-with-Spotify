@@ -48,6 +48,7 @@ export function Playlist(props) {
 
 //adds track to the playlist
 async function addTrack(uri, accessToken, increment, handleSubmit) {
+  console.log("CLICKED");
   const data = {
     position: 0,
   };

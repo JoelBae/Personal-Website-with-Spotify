@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Playlist, SongInput, Results } from "./spotifyApi.js";
+import { Playlist, SongInput } from "./spotifyApi.js";
 
 AOS.init({ duration: 1000 });
 
@@ -17,7 +17,7 @@ function App() {
   getToken();
 
   //get new access token from backend every hour
-  const interval = setInterval(() => getToken(), 1000 * 60 * 60);
+  setInterval(() => getToken(), 1000 * 60 * 60);
 
   //don't render anything if no token exists
   if (token === "") {

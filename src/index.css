@@ -44,6 +44,7 @@ input {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .intro {
@@ -53,7 +54,7 @@ input {
   height: 100vh;
 }
 .name {
-  font-size: 200px;
+  font-size: 1000%;
   color: rgb(167, 234, 234);
 }
 
@@ -91,7 +92,7 @@ input {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  min-width: 40vh;
+  overflow-x: auto;
   margin-right: 5%;
   height: 30vh;
   border-radius: 7px;

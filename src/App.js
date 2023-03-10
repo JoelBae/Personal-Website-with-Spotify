@@ -82,9 +82,15 @@ function Projects() {
             Polytonle: Wordle type game for chords and ear training.
           </a>
         </li>
-        <li><a href="https://github.com/JoelBae/CanonicalFormCalculator" target="_blank">
-            Canonical Form Calculator: Computes the canonical form of a linear program in standard form given a basis. 
-    </li>
+        <li>
+          <a
+            href="https://github.com/JoelBae/CanonicalFormCalculator"
+            target="_blank"
+          >
+            Canonical Form Calculator: Computes the canonical form of a linear
+            program in standard form given a basis.
+          </a>
+        </li>
       </ul>
     </div>
   );

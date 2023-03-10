@@ -61,10 +61,9 @@ function About(props) {
     <div className="about" data-aos="fade-in">
       <div className="aboutContainer">
         <h3>About Me</h3>
-        Hello! I am currently in my 2A term at the University of Waterloo
+        Hello! I am currently in my 2B term at the University of Waterloo
         studying Mathematics. My hobbies include: music production, web
-        development, video games, and music. The technologies I know are:
-        Javascript, Node.js, React, Java, and C.
+        development, video games, and Go.
         <SongInput increment={increment} accessToken={props.accessToken} />
       </div>
 
@@ -83,7 +82,9 @@ function Projects() {
             Polytonle: Wordle type game for chords and ear training.
           </a>
         </li>
-        <li>More to come!</li>
+        <li><a href="https://github.com/JoelBae/CanonicalFormCalculator" target="_blank">
+            Canonical Form Calculator: Computes the canonical form of a linear program in standard form given a basis. 
+    </li>
       </ul>
     </div>
   );
